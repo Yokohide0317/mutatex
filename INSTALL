@@ -4,18 +4,26 @@ INSTALLATION
 Requirements
 ------------
 
-MutateX is designed to run on Linux and MacOS. It requires Python 2.7 and >=3.10
-and the following Python packages:
+MutateX is designed to run on Linux and MacOS.
+
+Notice that, while MutateX runs on the Windows Subsystem for Linux,
+its parallelization strategy has been reported not to run correctly (see Issue #205).
+We recommend running MutateX with only one process when running on WSL, or to use a
+full Linux virtual machine, or just a Linux system altogether.
+
+MutateX requires Python >=3.10 and the following Python packages:
 
 setuptools
 biopython
-matplotlib
 numpy
+matplotlib
 scipy
 six
 openpyxl
 pandas
 logomaker
+pyyaml
+adjustText >= 0.8
 
 The most convenient way to install MutateX is by creating a Python virtual 
 environment in which all the requirements will be installed. In order to do

@@ -121,9 +121,31 @@ name "sec:Requirements-and-installation"
 \end_layout
 
 \begin_layout Standard
+MutateX is designed and tested to work on Linux and macOS.
+ We currently don't have the means to support Windows.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Important
+\series default
+:
+ running MutateX on WSL (Windows Subsystem for Linux) has been shown to not work correctly when using more than one core,
+ and it is therefore discouraged.
+ Unfortunately,
+ we currently cannot troubleshoot and test MutateX on WSL See issue #205 on the MutateX GitHub repository for more information.
+\end_layout
+
+\begin_layout Standard
 MutateX and the associated scripts are written in Python,
- and requires having a working Python 2.x or 3.x (x >= 7) installation.
- A number of Python packages need also to be available.
+ and requires having a working Python >= 3.7.
+ installation.
+ 
+\end_layout
+
+\begin_layout Standard
+A number of Python packages need also to be available.
  More in details,
  MutateX requires:
 \end_layout
@@ -162,6 +184,14 @@ pandas
 
 \begin_layout Itemize
 logomaker
+\end_layout
+
+\begin_layout Itemize
+pyyaml
+\end_layout
+
+\begin_layout Itemize
+adjustTex >= 0.8
 \end_layout
 
 \begin_layout Standard
@@ -3599,11 +3629,9 @@ Logo plot obtained using ddg2logo.
 \end_layout
 
 \begin_layout Standard
-The user can also customize the logo plotting providing a configuration
- file in the yaml format with the -c option, which is mutually exclusive
- with the -cs option to select a color scheme.
- The configuration file contains the information about the colors to be
- used for the different residues.
+The user can also customize the logo plotting providing a configuration file in the yaml format with the -c option,
+ which is mutually exclusive with the -cs option to select a color scheme.
+ The configuration file contains the information about the colors to be used for the different residues.
  
 \end_layout
 
@@ -3619,102 +3647,122 @@ status open
 
 \begin_layout Plain Layout
 
-W: 'green' 
+W:
+ 'green' 
 \end_layout
 
 \begin_layout Plain Layout
 
-F: 'green' 
+F:
+ 'green' 
 \end_layout
 
 \begin_layout Plain Layout
 
-Y: 'green' 
+Y:
+ 'green' 
 \end_layout
 
 \begin_layout Plain Layout
 
-E: 'blue' 
+E:
+ 'blue' 
 \end_layout
 
 \begin_layout Plain Layout
 
-D: 'blue' 
+D:
+ 'blue' 
 \end_layout
 
 \begin_layout Plain Layout
 
-R: 'red'  
+R:
+ 'red'  
 \end_layout
 
 \begin_layout Plain Layout
 
-H: 'red' 
+H:
+ 'red' 
 \end_layout
 
 \begin_layout Plain Layout
 
-K: 'red' 
+K:
+ 'red' 
 \end_layout
 
 \begin_layout Plain Layout
 
-I: 'black' 
+I:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-V: 'black' 
+V:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-G: 'black' 
+G:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-A: 'black' 
+A:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-P: 'black' 
+P:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-M: 'black'  
+M:
+ 'black'  
 \end_layout
 
 \begin_layout Plain Layout
 
-L: 'black' 
+L:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-C: 'black' 
+C:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-N: 'black' 
+N:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-Q: 'black' 
+Q:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-S: 'black' 
+S:
+ 'black' 
 \end_layout
 
 \begin_layout Plain Layout
 
-T: 'black'
+T:
+ 'black'
 \end_layout
 
 \end_inset
