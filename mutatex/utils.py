@@ -39,6 +39,28 @@ import textwrap
 import csv
 from collections import defaultdict
 
+
+def check_fname_tuple(fname):
+    """
+    checks that a filename is a strings and not a tuple of strings
+    Parameters
+    ----------
+    fname : str or tuple of str
+        file name or tuple of file names
+    Returns
+    -------
+    fname : tuple of str
+        tuple of file names
+    """
+
+    if isinstance(fname, str):
+        return fname
+    elif isinstance(fname, tuple):
+        return fname[0]
+    else:
+        log.error("filename %s is not a string or a tuple of strings" % str(fname))
+        raise TypeError
+
 def init_arguments(arguments, parser):
     """
     Adds arguments common to several mutatex scripts to a argparse.ArgumentParser

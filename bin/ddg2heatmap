@@ -32,6 +32,7 @@ import csv
 from Bio import PDB
 from six import iteritems
 from mutatex.utils import *
+from pathlib import Path
 
 description = 'ddg2heatmap: plot heatmaps of MutateX DDG data'
 epilog = """ddg2heatmap plots DDGs from MutateX scans as heatmaps. By default, the value
@@ -193,7 +194,8 @@ else:
 #load ddg data
 for fname in fnames:
     try:
-        this_data = parse_ddg_file("%s/%s" % (options.ddg_dir, fname), reslist=res_order)
+        fname = check_fname_tuple(fname)
+        this_data = parse_ddg_file((Path(options.ddg_dir) / fname), reslist=res_order) # type: ignore
     except (IOError, TypeError):
         exit(1)
 

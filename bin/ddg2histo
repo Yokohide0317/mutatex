@@ -30,6 +30,7 @@ import csv
 from six import iteritems
 from Bio import PDB
 from mutatex.utils import *
+from pathlib import Path
 
 description = 'ddg2histo: plot a histogram of the DDGs calculated for all the mutations of a single residue'
 epilog = """This script plots the DDG values for a single mutation site as a histogram,
@@ -200,7 +201,8 @@ else:
 
 for residue in residues:
     try:
-        this_data, this_std, this_min, this_max = parse_ddg_file("%s/%s" % (options.ddg_dir, residue), reslist=res_order, full=True)
+        residue = check_fname_tuple(residue)
+        this_data, this_std, this_min, this_max = parse_ddg_file((Path(options.ddg_dir) / residue), reslist=res_order, full=True)
     except (IOError, TypeError):
         exit(1)
 
